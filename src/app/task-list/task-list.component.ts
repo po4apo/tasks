@@ -1,7 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {TasksService} from "../app.service";
-import {pipe, switchMap} from 'rxjs';
-import {Pipe, PipeTransform} from '@angular/core';
 
 export interface Task {
   created_at: string;
