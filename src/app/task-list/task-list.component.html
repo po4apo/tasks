@@ -1,0 +1,26 @@
+<h1>Todo List</h1>
+<form class="flex mt-4">
+
+
+  <div class="row">
+
+    <div class="col s12 input-field">
+      <input id="input" type="text" class="validate full-width" name="title" [(ngModel)]="title">
+
+    </div>
+    <div class="col s2">
+      <button class="btn" type="submit" name="action" (click)="addTodo()">Add</button>
+    </div>
+  </div>
+
+
+</form>
+<div *ngFor="let task of tasks">
+  <app-task *ngIf="!task.isDone" [task]="task"></app-task>
+</div>
+
+<div *ngFor="let task of tasks">
+  <app-task *ngIf="task.isDone" [task]="task"></app-task>
+</div>
+
+

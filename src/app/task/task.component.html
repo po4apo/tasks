@@ -1,0 +1,15 @@
+<ng-container *ngIf="!isDeleted">
+  <div class="card-panel row" [ngClass]="{'grey lighten-2': task.isDone }">
+    <div class="col s12">
+      <h5 class="light">{{task.title}}</h5>
+    </div>
+    <div class="col">
+      <button class="btn" *ngIf="!task.isDone" (click)="doDone()">Done</button>
+      <button class="btn teal lighten-3" *ngIf="task.isDone" (click)="doNotDone()">unDone</button>
+    </div>
+    <div class="col">
+      <button class="btn" [ngClass]="{'teal lighten-3': task.isDone }" (click)="deleteTask()">Remove</button>
+    </div>
+    <div class="col s12 grey-text right-align">{{task.created_at | date}}</div>
+  </div>
+</ng-container>
